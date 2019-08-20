@@ -12,58 +12,51 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Named Entity Extractor</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse collapse show" id="navbarsExampleDefault" style="">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+
             </ul>
             <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-        </nav>
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Your text</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Select entity to find</label>
-                <select class="form-control" id="ner-options">
-                    <option>Person</option>
-                    <option>Organization</option>
-                    <option>Geopolitical</option>
-                    <option>Money</option>
+    </nav>
+    <br/>
+    <br/>
+    <br/>
+        <div class="container">
+
+            <form method="POST" action="/process">
+                <div class="form-group">
+                    <label>Your text</label>
+                <textarea type="text" class="form-control" name="rawtext" rows="5" cols="5"></textarea>
+                </br>
+
+                <select class="form-control" id="taskoption">
+                    <option selected>Select Task</option>
+                    <option value="person">Person</option>
+                    <option value="organization">Organization</option>
+                    <option value="geopolitical">Geopolitical</option>
+                    <option value="money">Money</option>
                 </select>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="button" class="btn btn-primary">Clear</button>
-            <button type="submit" class="btn btn-info">Submit</button>
+                </br>
+                <button type="button" class="btn btn-primary">Clear</button>
+                <button type="submit" class="btn btn-info">Submit</button>
+                </div>
             </form>
+        </div>
 
         <div class="container">
             <div class="alert alert-success" role="alert">
