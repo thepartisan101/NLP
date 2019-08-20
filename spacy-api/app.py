@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request
 import re
 import pandas as pd
-import spacy-api
+import spacy
 from spacy import displacy
 import en_core_web_sm
 nlp = spacy.load('en_core_web_md')
