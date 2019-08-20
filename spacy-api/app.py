@@ -39,7 +39,7 @@ def process():
             results = MONEY_named_entity
             num_of_results = len(results)
 
-    return render_template("index.html", results=results, num_of_results = num_of_results)
+    return render_template("index.html", results = results, num_of_results = num_of_results)
 
 
 if __name__ == "__main__":
